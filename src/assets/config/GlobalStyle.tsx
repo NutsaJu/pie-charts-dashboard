@@ -49,7 +49,7 @@ export const GlobalStyle = createGlobalStyle`
   button {
     cursor: pointer;
   }
-
+  
   img, picture, video, canvas, svg {
     display: block;
     max-width: 100%;
@@ -58,5 +58,20 @@ export const GlobalStyle = createGlobalStyle`
   ::selection {
     background-color: ${({ theme }) => theme.PrimaryBlue600};
     color: #fff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    border-radius: 100px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.PrimaryBlue600};
+    border-radius: 100px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: ${({ theme }) => theme.PrimaryBlue600};
   }
 `;

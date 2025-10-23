@@ -1,14 +1,15 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import { getInitialTheme } from "../../utils/getInitialTheme";
-
-export type ThemeMode = "light" | "dark";
+import type { DataSet, ThemeMode } from "../../types/types";
 
 interface AppState {
   theme: ThemeMode;
+  selectedDataset: DataSet;
 }
 
 const initialState: AppState = {
   theme: getInitialTheme(),
+  selectedDataset: "visitors",
 };
 
 const appSlice = createSlice({
@@ -23,8 +24,11 @@ const appSlice = createSlice({
       state.theme = action.payload;
       localStorage.setItem("theme", state.theme);
     },
+    setSelectedDataset: (state, action: PayloadAction<DataSet>) => {
+      state.selectedDataset = action.payload;
+    },
   },
 });
 
-export const { toggleTheme, setTheme } = appSlice.actions;
+export const { toggleTheme, setTheme, setSelectedDataset } = appSlice.actions;
 export default appSlice.reducer;
