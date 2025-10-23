@@ -26,6 +26,8 @@ Users can:
 
 # Tech Stack
 
+| Category | Technology |
+|-----------|-------------|
 | Framework | React (Vite) |
 | Language | TypeScript |
 | State Management | Redux Toolkit |
