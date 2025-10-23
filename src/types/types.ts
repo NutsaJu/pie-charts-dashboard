@@ -1,7 +1,7 @@
 import type { JSX } from "react";
 
 export type ThemeMode = "light" | "dark";
-export type DataSet = 'visitors' | 'engagement'
+export type DataSet = "visitors" | "engagement";
 
 export type AppRoute = {
   path: string;
@@ -17,5 +17,43 @@ export type LoaderProps = {
 export type DataSetMenu = {
   id: number;
   slug: DataSet;
-  label: string
+  label: string;
+};
+
+export type ChartDataItem = {
+  name: string;
+  value: number;
+};
+
+export type ChartGroup = {
+  title: string;
+  data: ChartDataItem[];
+};
+
+export type DatasetPeriod = {
+  label: string;
+  chart1: ChartGroup;
+  chart2: ChartGroup;
+};
+
+export type DashboardDataset = {
+  id: string;
+  label: string;
+  periods: DatasetPeriod[];
+};
+
+export type ButtonProps = {
+  active?: boolean;
+  title?: string;
+  onClick?: () => void;
+};
+
+export type PieChartCardProps = {
+  title: string;
+  data: ChartDataItem[];
+};
+export type EmptyStateProps = {
+  icon?: React.ReactNode;
+  title?: string;
+  description?: string;
 }

@@ -8,6 +8,7 @@ import { FiSun, FiMoon } from "react-icons/fi";
 import Responsive from "../../assets/config/Responsive";
 import { IoPieChartSharp } from "react-icons/io5";
 import { lightTheme } from "../../assets/config/theme";
+import Button from "../Button";
 
 const Header: React.FC = () => {
   const dispatch = useDispatch();
@@ -30,13 +31,12 @@ const Header: React.FC = () => {
         {dataSetMenu.map((item) => {
           const isActive = selectedDataset === item.slug;
           return (
-            <DatasetChip
+            <Button
               key={item.id}
-              $active={isActive}
+              active={isActive}
+              title={item.label}
               onClick={() => dispatch(setSelectedDataset(item.slug))}
-            >
-              {item.label}
-            </DatasetChip>
+            />
           );
         })}
       </DataSetRow>
@@ -94,7 +94,9 @@ const Title = styled.h1`
 const ThemeToggle = styled.button`
   background: ${({ theme }) => theme.PrimaryGray300};
   color: ${({ theme }) =>
-    theme.name === "light" ? theme.PrimaryBaseBlack : lightTheme.PrimaryBaseWhite};
+    theme.name === "light"
+      ? theme.PrimaryBaseBlack
+      : lightTheme.PrimaryBaseWhite};
   border: none;
   border-radius: 50%;
   width: 38px;
@@ -116,24 +118,4 @@ const DataSetRow = styled.div`
   display: flex;
   gap: 10px;
   align-items: center;
-`;
-
-const DatasetChip = styled.button<{ $active: boolean }>`
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 500;
-  border: 1px solid
-    ${({ theme, $active }) =>
-      $active ? theme.PrimaryBlue600 : theme.PrimaryGray300};
-  background-color: ${({ theme, $active }) =>
-    $active ? theme.PrimaryBlue600 : "transparent"};
-  color: ${({ theme, $active }) => ($active ? lightTheme.PrimaryBaseWhite : theme.PrimaryBaseBlack)};
-  transition: all 0.2s ease;
-  cursor: pointer;
-
-  &:hover {
-    background-color: ${({ theme, $active }) =>
-      $active ? theme.PrimaryBlue600 : theme.PrimaryGray300};
-  }
 `;
