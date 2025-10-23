@@ -1,73 +1,118 @@
-# React + TypeScript + Vite
+# Pie Charts Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive dashboard built with React and TypeScript that visualizes multiple datasets using pie charts.  
+This project demonstrates skills in modern front-end development, including data visualization, theming, responsive design, and component architecture.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Overview
 
-## React Compiler
+The dashboard displays two main data categories:
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- Website Visitors Overview
+- Website Engagement Overview
 
-## Expanding the ESLint configuration
+Each dataset includes two pie charts visualizing specific metrics such as device type, traffic sources, sessions, or bounce rates.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Users can:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Switch between datasets (Visitors / Engagement)
+- Filter data by period (Last Week, Last Month, Last Year)
+- Toggle between light and dark themes
+- Hide or show chart segments dynamically
+- View responsive and animated charts that adapt to all devices
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+# Tech Stack
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+| Framework | React (Vite) |
+| Language | TypeScript |
+| State Management | Redux Toolkit |
+| Styling | styled-components |
+| Charts | Recharts |
+| Routing | React Router |
+| Icons | React Icons |
+| Code Quality | ESLint, Prettier |
+| Responsive Design | Custom Responsive.ts breakpoints |
+| Theming | Styled-components ThemeProvider (light/dark modes) |
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+# Installation and Setup
+
+Before starting, make sure you have Node.js (v18 or later) and npm installed on your machine.
+
+1. Clone the repository
+
+- git clone #url
+
+2. Install dependencies
+
+Install all required packages:
+
+- npm install
+
+3. Start the development server
+
+Run the following command to start the local development environment:
+
+- npm run dev
+
+4. Build for production
+
+To create an optimized production build, run:
+
+- npm run build
+
+The build output will be located in the /dist directory.
+You can preview the build locally using:
+
+- npm run preview
+
+---
+
+## Usage Guide
+
+- Dashboard Structure
+
+The dashboard includes:
+	•	A header with project title, dataset selector, and theme toggle
+	•	A period filter section for switching between Last Week, Last Month, and Last Year
+	•	Two pie charts displaying the active dataset
+	•	A fallback empty state if no data is available
+
+- Switching Between Datasets
+
+The header contains chips for “Website Visitors” and “Website Engagement.”
+Clicking on these updates both pie charts with new data from the selected dataset.
+
+- Filtering by Period
+
+Below the header, there are buttons labeled “Last Week,” “Last Month,” and “Last Year.”
+Selecting one of these filters updates the chart data accordingly.
+
+- Theme Switching
+
+Click the theme toggle icon in the header to switch between light and dark themes.
+The selected theme is saved locally and persists between sessions.
+All chart and UI colors update automatically based on the current theme.
+
+- Filtering Chart Segments
+
+Each pie chart includes a legend for categories.
+Clicking on a legend item hides or shows that specific chart segment, allowing dynamic filtering.
+
+- Empty State
+
+If there is an error and no dataset or period is selected, the dashboard displays a placeholder message using the EmptyState component to indicate that no data is currently available.
+
+---
+
+## Developer Notes
+
+	-	All colors used in the charts and throughout the dashboard are defined in the shared Figma design file.
+  -	Responsive breakpoints are defined in Responsive.ts.
+	-	The header is fixed, and only the content area is scrollable.
+	-	The project uses styled-components for theme management and isolated component styling.
+	- Each major UI element (Header, Button, ChartCard, EmptyState) is built as a reusable, independent component.
