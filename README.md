@@ -5,6 +5,39 @@ This project demonstrates skills in modern front-end development, including data
 
 ---
 
+# Installation and Setup
+
+Before starting, make sure you have Node.js (v18 or later) and npm installed on your machine.
+
+1. Clone the repository
+
+- git clone #url
+
+2. Install dependencies
+
+Install all required packages:
+
+- npm install
+
+3. Start the development server
+
+Run the following command to start the local development environment:
+
+- npm run dev
+
+4. Build for production
+
+To create an optimized production build, run:
+
+- npm run build
+
+The build output will be located in the /dist directory.
+You can preview the build locally using:
+
+- npm run preview
+
+---
+
 # Overview
 
 The dashboard displays two main data categories:
@@ -38,39 +71,6 @@ Users can:
 | Code Quality | ESLint, Prettier |
 | Responsive Design | Custom Responsive.ts breakpoints |
 | Theming | Styled-components ThemeProvider (light/dark modes) |
-
----
-
-# Installation and Setup
-
-Before starting, make sure you have Node.js (v18 or later) and npm installed on your machine.
-
-1. Clone the repository
-
-- git clone #url
-
-2. Install dependencies
-
-Install all required packages:
-
-- npm install
-
-3. Start the development server
-
-Run the following command to start the local development environment:
-
-- npm run dev
-
-4. Build for production
-
-To create an optimized production build, run:
-
-- npm run build
-
-The build output will be located in the /dist directory.
-You can preview the build locally using:
-
-- npm run preview
 
 ---
 
