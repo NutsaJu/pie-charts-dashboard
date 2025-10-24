@@ -29,8 +29,8 @@ export const websiteVisitorsDataset: DashboardDataset = {
       chart1: {
         title: "Users by Device Type",
         data: [
-          { name: "Desktop", value: 15200 },
-          { name: "Mobile", value: 13400 },
+          { name: "Desktop", value: 13400 },
+          { name: "Mobile", value: 15200 },
           { name: "Tablet", value: 3100 },
         ],
       },
@@ -50,7 +50,7 @@ export const websiteVisitorsDataset: DashboardDataset = {
         title: "Users by Device Type",
         data: [
           { name: "Desktop", value: 168000 },
-          { name: "Mobile", value: 142000 },
+          { name: "Mobile", value: 16000 },
           { name: "Tablet", value: 29000 },
         ],
       },

@@ -63,4 +63,5 @@ const FullscreenWrapper = styled.div`
   background-color: ${({ theme }) =>
     theme.name === "dark" ? "rgba(17, 24, 39, 0.75)" : "rgba(255, 255, 255, 0.75)"};
   z-index: 9999;
+  pointer-events: none;
 `;

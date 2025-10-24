@@ -87,7 +87,7 @@ const PieChartCard: React.FC<PieChartCardProps> = ({ title, data }) => {
             >
               <ColorDot $color={color} />
               <LegendLabel $hidden={isHidden}>{item.name}</LegendLabel>
-              <LegendValue $hidden={isHidden}>{percentage}%</LegendValue>
+              {!isHidden && <LegendValue>{percentage}%</LegendValue>}
             </LegendItem>
           );
         })}
@@ -175,11 +175,10 @@ const LegendLabel = styled.span<{ $hidden?: boolean }>`
     $hidden ? theme.PrimaryGray300 : theme.PrimaryGray600};
 `;
 
-const LegendValue = styled.span<{ $hidden?: boolean }>`
+const LegendValue = styled.span`
   font-size: 14px;
   font-weight: 500;
-  color: ${({ theme, $hidden }) =>
-    $hidden ? theme.PrimaryGray300 : theme.PrimaryBaseBlack};
+  color: ${({ theme }) => theme.PrimaryBaseBlack};
 `;
 
 const ToolTipWrapper = styled.div`

@@ -23,6 +23,9 @@ const Wrapper = styled.div`
   gap: 24px;
   padding: 24px;
   background-color: ${({ theme }) => theme.PrimaryBaseWhite};
+  ${Responsive.mobile}{
+    height: 85vh;
+  }
 `;
 
 const Content = styled.main`

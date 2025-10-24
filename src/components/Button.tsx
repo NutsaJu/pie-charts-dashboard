@@ -2,9 +2,21 @@ import styled from "styled-components";
 import type { ButtonProps } from "../types/types";
 import { lightTheme } from "../assets/config/theme";
 
-const Button: React.FC<ButtonProps> = ({ active = false, title, onClick }) => {
+const Button: React.FC<ButtonProps> = ({
+  id,
+  active = false,
+  title,
+  onClick,
+}) => {
   return (
-    <StyledButton $active={active} onClick={onClick}>
+    <StyledButton
+      id={id}
+      $active={active}
+      onClick={(e) => {
+        e.stopPropagation();
+        onClick?.();
+      }}
+    >
       {title}
     </StyledButton>
   );

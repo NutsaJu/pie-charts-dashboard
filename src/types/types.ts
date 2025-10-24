@@ -43,6 +43,7 @@ export type DashboardDataset = {
 };
 
 export type ButtonProps = {
+  id: string;
   active?: boolean;
   title?: string;
   onClick?: () => void;

@@ -32,10 +32,15 @@ const Header: React.FC = () => {
           const isActive = selectedDataset === item.slug;
           return (
             <Button
+              id={item.slug}
               key={item.id}
               active={isActive}
               title={item.label}
-              onClick={() => dispatch(setSelectedDataset(item.slug))}
+              onClick={() => {
+                if (item.slug !== selectedDataset) {
+                  dispatch(setSelectedDataset(item.slug));
+                }
+              }}
             />
           );
         })}

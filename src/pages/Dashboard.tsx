@@ -30,6 +30,7 @@ const Dashboard = (): JSX.Element => {
         <PeriodFilter>
           {["Last Week", "Last Month", "Last Year"].map((period) => (
             <Button
+              id={period}
               key={period}
               active={selectedPeriod === period}
               onClick={() => setSelectedPeriod(period)}
