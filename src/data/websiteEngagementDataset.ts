@@ -6,6 +6,7 @@ export const websiteEngagementDataset: DashboardDataset = {
   periods: [
     {
       label: "Last Week",
+      slug: "lastWeek",
       chart1: {
         title: "Sessions by Page Type",
         data: [
@@ -27,6 +28,7 @@ export const websiteEngagementDataset: DashboardDataset = {
     },
     {
       label: "Last Month",
+      slug: "lastMonth",
       chart1: {
         title: "Sessions by Page Type",
         data: [
@@ -48,6 +50,7 @@ export const websiteEngagementDataset: DashboardDataset = {
     },
     {
       label: "Last Year",
+      slug: 'lastYear',
       chart1: {
         title: "Sessions by Page Type",
         data: [

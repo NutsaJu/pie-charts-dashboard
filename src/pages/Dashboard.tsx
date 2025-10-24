@@ -11,7 +11,7 @@ import { MdOutlineInsights } from "react-icons/md";
 
 const Dashboard = (): JSX.Element => {
   const { selectedDataset } = useAppSelector((root) => root.app);
-  const [selectedPeriod, setSelectedPeriod] = useState("Last Month");
+  const [selectedPeriod, setSelectedPeriod] = useState("lastWeek");
 
   const activeDataset = useMemo(() => {
     return selectedDataset === "visitors"
@@ -20,7 +20,7 @@ const Dashboard = (): JSX.Element => {
   }, [selectedDataset]);
 
   const currentPeriod = activeDataset.periods.find(
-    (p) => p.label === selectedPeriod
+    (p) => p.slug === selectedPeriod
   );
 
   return (
@@ -28,13 +28,26 @@ const Dashboard = (): JSX.Element => {
       <HeaderRow>
         <Title>{activeDataset.label}</Title>
         <PeriodFilter>
-          {["Last Week", "Last Month", "Last Year"].map((period) => (
+          {[
+            {
+              slug: "lastWeek",
+              label: "Last Week",
+            },
+            {
+              slug: "lastMonth",
+              label: "Last Month",
+            },
+            {
+              slug: "lastYear",
+              label: "Last Year",
+            },
+          ].map((period) => (
             <Button
-              id={period}
-              key={period}
-              active={selectedPeriod === period}
-              onClick={() => setSelectedPeriod(period)}
-              title={period}
+              id={period?.slug}
+              key={period?.slug}
+              active={selectedPeriod === period?.slug}
+              onClick={() => setSelectedPeriod(period?.slug)}
+              title={period?.label}
             />
           ))}
         </PeriodFilter>

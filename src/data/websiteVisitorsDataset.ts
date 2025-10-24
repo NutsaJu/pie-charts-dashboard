@@ -6,6 +6,7 @@ export const websiteVisitorsDataset: DashboardDataset = {
   periods: [
     {
       label: "Last Week",
+      slug: "lastWeek",
       chart1: {
         title: "Users by Device Type",
         data: [
@@ -26,6 +27,7 @@ export const websiteVisitorsDataset: DashboardDataset = {
     },
     {
       label: "Last Month",
+      slug: "lastMonth",
       chart1: {
         title: "Users by Device Type",
         data: [
@@ -46,6 +48,7 @@ export const websiteVisitorsDataset: DashboardDataset = {
     },
     {
       label: "Last Year",
+      slug: "lastYear",
       chart1: {
         title: "Users by Device Type",
         data: [

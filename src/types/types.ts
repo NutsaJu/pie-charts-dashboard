@@ -32,6 +32,7 @@ export type ChartGroup = {
 
 export type DatasetPeriod = {
   label: string;
+  slug: string;
   chart1: ChartGroup;
   chart2: ChartGroup;
 };
