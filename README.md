@@ -79,10 +79,10 @@ You can preview the build locally using:
 - Dashboard Structure
 
 The dashboard includes:
-	•	A header with project title, dataset selector, and theme toggle
-	•	A period filter section for switching between Last Week, Last Month, and Last Year
-	•	Two pie charts displaying the active dataset
-	•	A fallback empty state if no data is available
+- A header with project title, dataset selector, and theme toggle
+- A period filter section for switching between Last Week, Last Month, and Last Year
+- Two pie charts displaying the active dataset
+- A fallback empty state if no data is available
 
 - Switching Between Datasets
 
@@ -113,8 +113,8 @@ If there is an error and no dataset or period is selected, the dashboard display
 
 ## Developer Notes
 
-	-	All colors used in the charts and throughout the dashboard are defined in the shared Figma design file.
-  -	Responsive breakpoints are defined in Responsive.ts.
-	-	The header is fixed, and only the content area is scrollable.
-	-	The project uses styled-components for theme management and isolated component styling.
-	- Each major UI element (Header, Button, ChartCard, EmptyState) is built as a reusable, independent component.
+- All colors used in the charts and throughout the dashboard are defined in the shared Figma design file.
+- Responsive breakpoints are defined in Responsive.ts.
+- The header is fixed, and only the content area is scrollable.
+- The project uses styled-components for theme management and isolated component styling.
+- Each major UI element (Header, Button, ChartCard, EmptyState) is built as a reusable, independent component.
